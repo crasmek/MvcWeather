@@ -18,7 +18,8 @@ namespace MvcWeather.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+           // return "value";
+            return "2021 value "+id.ToString(); // itay
         }
 
         // POST api/values
