@@ -20,6 +20,9 @@ namespace MvcWeather.Controllers
         {
            // return "value";
             return "2021 value "+id.ToString(); // itay
+
+            // 05-02-2021, now need to build class to retrieve weather data
+
         }
 
         // POST api/values
