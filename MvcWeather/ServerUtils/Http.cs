@@ -20,7 +20,7 @@ namespace MvcWeather.ServerUtils
         static string ApiToken = "f058958a-d8bd-47cc-95d7-7ecf98610e47";
 
         static string testUrl="https://api.ims.gov.il/v1/envista/stations";
-
+        static string heroku = "https://cors-anywhere.herokuapp.com/";
         static string GetThisMonthsRainUrl(string stationId,string channelId)
         {
             string res = BaseUrl + "/" + stationId + "/data/" + channelId + "/monthly";
@@ -33,14 +33,15 @@ namespace MvcWeather.ServerUtils
             return GetData(testUrl);
         }
 
-        public static string GetData(string url)
+        public static string GetData(string myUrl)
         {
+            string url = heroku + myUrl;
             //string s=$"ddd";
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
-                   //| SecurityProtocolType.Tls11
-                   //| SecurityProtocolType.Tls12
-                   | SecurityProtocolType.Ssl3;
+            //ServicePointManager.Expect100Continue = true;
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+            //       //| SecurityProtocolType.Tls11
+            //       //| SecurityProtocolType.Tls12
+            //       | SecurityProtocolType.Ssl3;
 
             try
             {
