@@ -37,10 +37,26 @@ namespace MvcWeather.ServerUtils
 
         }
 
+
+
+        public static string GetRainTillToday(string ST_ID, string CH_ID)
+        {
+            string url = "https://api.ims.gov.il/v1/envista/stations/" + ST_ID + "/data/" + CH_ID + "/daily";
+            return GetData(url);
+        }
+
+
+
         //https://api.ims.gov.il/v1/envista/stations/{%ST_ID%}/data/{%CH_ID%}/latest
         public static string GetLatest(string ST_ID, string CH_ID)
         {
             string url = "https://api.ims.gov.il/v1/envista/stations/" + ST_ID + "/data/" + CH_ID + "/latest";
+            return GetData(url);
+        }
+
+        public static string GetDaily(string ST_ID, string CH_ID)
+        {
+            string url = "https://api.ims.gov.il/v1/envista/stations/" + ST_ID + "/data/" + CH_ID + "/daily";
             return GetData(url);
         }
 

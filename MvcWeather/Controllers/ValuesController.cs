@@ -29,8 +29,9 @@ namespace MvcWeather.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            string jsonData = ServerUtils.Http.GetLatest(Convert.ToString(43), Convert.ToString(20));
-           // return "value";
+            //string jsonData = ServerUtils.Http.GetLatest(Convert.ToString(43), Convert.ToString(20));
+            string jsonData = ServerUtils.Http.GetDaily(Convert.ToString(43), Convert.ToString(20));
+            // return "value";
             // need to analize json data 
           
 
