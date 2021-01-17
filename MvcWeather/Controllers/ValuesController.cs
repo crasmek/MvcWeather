@@ -5,6 +5,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+
+using MvcWeather.ServerUtils;
+
 namespace MvcWeather.Controllers
 {
     public class ValuesController : ApiController
@@ -19,7 +22,11 @@ namespace MvcWeather.Controllers
         public string Get(int id)
         {
            // return "value";
-            return "2021 value "+id.ToString(); // itay
+            // need to analize json data 
+
+            //return ServerUtils.Http.testWeather();
+            return ServerUtils.Http.GetLatest(Convert.ToString(43),Convert.ToString(20));
+            //return "2021 value "+id.ToString(); // itay
 
             // 05-02-2021, now need to build class to retrieve weather data
 
